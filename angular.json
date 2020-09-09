@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "estudiantes"
+    }
+  },
+  "defaultProject": "estudiantes",
+  "cli": {
+    "analytics": "e5251c8c-5788-4d48-b5bb-92b4eeb32cee"
+  }
 }
