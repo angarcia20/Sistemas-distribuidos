@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ClienteService } from './services/cliente.service';
 import { estudiante } from 'src/model/usuario.model';
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,16 @@ import { estudiante } from 'src/model/usuario.model';
 })
 export class AppComponent {
   title = 'estudiantes';
-  usuarios: estudiante[];
+  usuarios:any = [];
+
+  constructor(private clienteService: ClienteService){
+     this.clienteService.getAllEstudents(). subscribe(
+      estudent => {
+        this.usuarios = estudent;
+        console.log(this.usuarios);
+        console.log(estudent);
+      }, error => console.error(error)
+    )
+  }
+  
 }
